@@ -347,7 +347,7 @@ class Controller(QtCore.QObject):
                 continue
 
             # Only show assets without a visual parent.
-            if "visualParent" not in doc["data"]:
+            if doc["data"].get("visualParent") is None:
                 valid_docs.append(
                     dict(
                         {
